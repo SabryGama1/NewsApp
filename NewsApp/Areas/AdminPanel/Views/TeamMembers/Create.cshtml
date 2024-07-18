@@ -1,0 +1,39 @@
+﻿@model NewsApp.Models.TeamMember
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container">
+<h1>Create</h1>
+
+<h4>TeamMember</h4>
+<hr />
+<div class="row">
+    <div class="col-10">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JpbTitle" class="control-label"></label>
+                <input asp-for="JpbTitle" class="form-control" />
+                <span asp-validation-for="JpbTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="File" type="file" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-dark" asp-action="Index">Back to List</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+

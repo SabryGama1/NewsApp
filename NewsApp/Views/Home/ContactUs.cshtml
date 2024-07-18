@@ -1,0 +1,26 @@
+﻿@model ContactUS
+<section id="contact" class="contact">
+    <div class="container" dir="rtl">
+        <div class="row mt-5">
+            <div class="col-10">
+                <form asp-action="ContactUs" asp-controller="Home" method="post">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" asp-for="Name" class="form-control"  placeholder="اسمك">
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" class="form-control" asp-for="Email" placeholder="البريد الالكتروني">
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" class="form-control" asp-for="Subject" placeholder="الموضوع">
+                    </div>
+                    <div class="form-group mt-3 mb-3">
+                        <textarea class="form-control" asp-for="Message" rows="5" placeholder="الرساله"></textarea>
+                    </div>
+                    <div><button class="btn btn-success" type="submit">ارسال</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

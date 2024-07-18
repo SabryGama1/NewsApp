@@ -1,0 +1,35 @@
+﻿@model IEnumerable<News>
+@{
+    ViewData["Title"] = "News";
+}
+
+<section id="about" class="about">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>الاخبار @ViewBag.name</h2>
+        </div>
+        <center>
+            @foreach (var item in Model)
+            {
+        <div class="row" style="margin:30px">
+                <div class="col-12">
+                    <img src="~/Images/News/@item.Image" style="height:200px;width:200px;border-radius:50%" class="img-fluid" alt="">
+                </div>
+                 <div class="col-sm-12">
+                    <h3>@item.Title</h3>
+                    <h6>@item.Date</h6>
+                    <p class="fst-italic">
+                        @item.Topic
+                    </p>
+                </div>
+        </div>
+                <center>
+                    <a class="btn btn-danger" asp-action="DeletNews" asp-controller="Home" asp-route-id="@item.Id">Delete</a>
+                </center>
+        <hr />
+           }
+        </center>
+    </div>
+</section>
+
